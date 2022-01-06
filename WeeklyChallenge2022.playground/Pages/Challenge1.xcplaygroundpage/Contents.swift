@@ -19,3 +19,15 @@ import Foundation
  * - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
  *
  */
+
+func checkWords(word1: String, word2: String) -> Bool{
+    let mapOne = Array(word1).reduce(into: [:]) { counts, number in
+        counts[number, default: 0] += 1
+    }
+    let mapTwo = Array(word2).reduce(into: [:]) { counts, number in
+        counts[number, default: 0] += 1
+    }
+    return (mapOne == mapTwo) ? true : false
+}
+
+print(checkWords(word1: "holass", word2: "oslah"))
